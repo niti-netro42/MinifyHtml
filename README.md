@@ -1,14 +1,33 @@
 MinifyHtml
 ==========
 
-CakePHP 4, HTML Minify Plugin
+CakePHP 5, HTML Minify Plugin
 
 ### Installation ###
 
 To install via [Composer](http://getcomposer.org/), use the command below, it will automatically detect the latest version and bind it with `~`.
 
+First, add this in your composer.json
 ```
-composer require wyrihaximus/minify-html 
+"repositories": [
+        {
+            "type":"package",
+            "package": {
+                "name": "netro42/minify-html",
+                "version":"1.0",
+                "source": {
+                    "url": "https://github.com/niti-netro42/MinifyHtml.git",
+                    "type": "git",
+                    "reference":"master"
+                }
+            }
+        }
+    ]
+```
+
+Then you can run this following composer command
+```
+composer require netro42/minify-html:1.0
 ```
 
 ## Bootstrap ##
@@ -18,7 +37,7 @@ Plugins are loaded in your application’s `bootstrap()` function:
 ```php
 // In src/Application.php
 use Cake\Http\BaseApplication;
-use WyriHaximus\MinifyHtml\Plugin as MinifyHtmlPlugin;
+use Netro42\MinifyHtml\Plugin as MinifyHtmlPlugin;
 
 class Application extends BaseApplication {
     public function bootstrap()
@@ -33,14 +52,14 @@ class Application extends BaseApplication {
 
 ### Usage ###
 
-After loading this plugin in your `bootstrap.php` the helper can be enabled in the `AppView` by loading the `WyriHaximus/MinifyHtml.MinifyHtml` helper like the example below:
+After loading this plugin in your `bootstrap.php` the helper can be enabled in the `AppView` by loading the `Netro42/MinifyHtml.MinifyHtml` helper like the example below:
 
 ```php
 class AppView extends View
 {
     public function initialize(): void
     {
-        $this->loadHelper('WyriHaximus/MinifyHtml.MinifyHtml');
+        $this->loadHelper('Netro42/MinifyHtml.MinifyHtml');
     }
 }
 ```
@@ -55,12 +74,12 @@ When debug mode is on nothing will be minified.
 
 To use MinifyHtml instead of `dereuromark/cakephp-cache`'s own HTML minifier. Set the [`compress` configuration option](https://github.com/dereuromark/cakephp-cache#component-configuration) to:
 ```php
-'\WyriHaximus\MinifyHtml\compress'
+'\Netro42\MinifyHtml\compress'
 ```
 
 ### Configuration ###
 
-All configuration is namespaced, just as this plugin into `WyriHaximus.MinifyHtml`. The following options are available:
+All configuration is namespaced, just as this plugin into `Netro42.MinifyHtml`. The following options are available:
 
 `debugOverride` (bool) Defaults to `false`. Everwrite debug and minify when debug it on. 
 `factory` (string) Defaults to `WyriHaximus\HtmlCompress\Factory::constructFastest`. Speficy a parser factory, `constructFastest`, `construct`, and `constructSmallest` are build in.

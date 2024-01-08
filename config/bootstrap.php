@@ -2,6 +2,6 @@
 
 use Cake\Core\Configure;
 
-if (!Configure::check('WyriHaximus.MinifyHtml.factory')) {
-    Configure::write('WyriHaximus.MinifyHtml.factory', 'WyriHaximus\HtmlCompress\Factory::constructFastest');
+if (!Configure::check('Netro42.MinifyHtml.factory')) {
+    Configure::write('Netro42.MinifyHtml.factory', 'WyriHaximus\HtmlCompress\Factory::constructFastest');
 }

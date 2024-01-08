@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace WyriHaximus\MinifyHtml\View\Helper;
+namespace Netro42\MinifyHtml\View\Helper;
 
 use Cake\Core\Configure;
 use Cake\View\Helper;
-use function WyriHaximus\MinifyHtml\compress;
+use function Netro42\MinifyHtml\compress;
 
 /**
  * Class MinifyHtmlHelper
- * @package WyriHaximus\MinifyHtml\View\Helper
+ * @package Netro42\MinifyHtml\View\Helper
  */
 class MinifyHtmlHelper extends Helper
 {
@@ -24,7 +24,7 @@ class MinifyHtmlHelper extends Helper
     {
         if ((
                 !Configure::read('debug') ||
-                Configure::read('WyriHaximus.MinifyHtml.debugOverride')
+                Configure::read('Netro42.MinifyHtml.debugOverride')
             ) &&
             in_array($this->_View->getResponse()->getType(), $this->mimeTypes)
         ) {

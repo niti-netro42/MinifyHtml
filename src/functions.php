@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace WyriHaximus\MinifyHtml;
+namespace Netro42\MinifyHtml;
 
 use Cake\Core\Configure;
 
@@ -18,7 +18,7 @@ use Cake\Core\Configure;
  */
 function compress(string $content): string
 {
-    $factory = call_user_func(Configure::read('WyriHaximus.MinifyHtml.factory'));
+    $factory = call_user_func(Configure::read('Netro42.MinifyHtml.factory'));
 
     //The error `Function libxml_disable_entity_loader() is deprecated` is suppressed
     return @$factory->compress($content);

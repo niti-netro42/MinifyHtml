@@ -1,6 +1,6 @@
 <?php
 
-namespace WyriHaximus\MinifyHtml;
+namespace Netro42\MinifyHtml;
 
 use Cake\Core\BasePlugin;
 
