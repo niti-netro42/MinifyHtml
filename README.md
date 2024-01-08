@@ -10,24 +10,16 @@ To install via [Composer](http://getcomposer.org/), use the command below, it wi
 First, add this in your composer.json
 ```
 "repositories": [
-        {
-            "type":"package",
-            "package": {
-                "name": "netro42/minify-html",
-                "version":"1.0",
-                "source": {
-                    "url": "https://github.com/niti-netro42/MinifyHtml.git",
-                    "type": "git",
-                    "reference":"master"
-                }
-            }
-        }
-    ]
+    {
+        "type": "github",
+        "url":  "git@github.com:niti-netro42/MinifyHtml.git"
+    }
+]
 ```
 
 Then you can run this following composer command
 ```
-composer require netro42/minify-html:1.0
+composer require netro42/minify-html
 ```
 
 ## Bootstrap ##
